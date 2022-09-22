@@ -38,22 +38,34 @@ function cityWeather(cityName) {
         currentPicEl.setAttribute("src,https://openweathermap.org/img/wn/" + wetPic + "@2x.png");
         currentPicEl.setAttribute("alt",response.data.weather[0].description);
 
+        // gets temp, wind, and Humidity to display
         currentTempEl.innerHTML = "Temperature: " + k2f(response.data.main.temp) + "&#176F";
         currentWindEl.innerHTML = "Wind: " + response.data.wind.speed + "MPH";
         currentHumidityEL.innerHTML = "Humidity: " + respomse.data.humidity + "%";
-
+      
+        // Grabs UV based off coordinates
         let latitude = response.data.coord.lat;
         let longitude = respomse.data.coord.lon;
+
+        // Displays UV
         let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&cnt=1";
         axios.get(UVQueryURL)
-        .then(function(response){
+        .then(function(response) {
             let UVIndex = document.createElement("span");
             UVIndex.setAttribute("class","badge badge-danger");
             UVIndex.innerHTML = response.data[0].value;
             currentUVEl.innerHTML = "UV: ";
             currentUVEl.append(UVIndex);
         });
-        
+
+        // Creates the 5 day forcast
+        let city = response.data.id;
+        let forcastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + myAPIKey;
+        axios.get(forcastQueryURL)
+        .then(function (response) {
+            fiveDayForecastEl.classList.remove("d-none");
+        })
+    })
     
 }
 init();

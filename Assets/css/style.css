@@ -5,5 +5,8 @@ body {
 h1 {
     font-size: 48px;
     font-weight: 700px;
+    color: black;
+    background-color: aqua;
+    border-radius: 20px;
     
 }
