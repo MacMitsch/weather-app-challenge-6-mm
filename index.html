@@ -21,9 +21,9 @@
                 <div class="col-lg-3 bg-light">
                     <p class="search-ehader my-1">Search By City</p>
                     <div class="input-group mb-3">
-                        <input id="city-input" type="text" class="form-control">
+                        <input id="enter-city" type="text" class="form-control">
                         <div class="input-group-append">
-                            <button class="btn btn-primary" type="button" id="search-button">Search</button>
+                            <button class="btn btn-primary" type="button" id="search">Search</button>
                         </div>
                     </div>
                     <button class="btn btn-primary mb-3" type="button" id="clear">Clear history</button>
@@ -31,11 +31,36 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="card-body">
-                        <div class=""></div>
+                        <div class="col-lg-11 card m-3 d-none" id="current-weather">
+                            <div class="card-body">
+                                <h2 class="city-name align-middle" id="city-name"></h2>
+                                    <img id="current-pic" alt="">
+                                    <h4 id="current-temp"></h4>
+                                    <h4 id="wind"></h4>
+                                    <h4 id="humidity"></h4>
+                                    <h4 id="UV"></h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>5 Day Forecast</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="forecast col-md-2 bg-primary text-white m-2 rounded"></div>
+                        <div class="forecast col-md-2 bg-primary text-white m-2 rounded"></div>
+                        <div class="forecast col-md-2 bg-primary text-white m-2 rounded"></div>
+                        <div class="forecast col-md-2 bg-primary text-white m-2 rounded"></div>
+                        <div class="forecast col-md-2 bg-primary text-white m-2 rounded"></div>
                     </div>
                 </div>
             </div>
         </div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./Assets/css/script.js"></script>
     
 </body>
 </html>

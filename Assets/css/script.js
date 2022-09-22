@@ -1,6 +1,6 @@
 const apiKey = "6c9f72feb86cd98bc2b2150eabe1f0f9"
-var today = moment().format('L');
-var locationHistory = [];
+
+
 function init () {
     const historyEl = document.getElementById("history");
     let searchHistory = JSON.parse(localstorage.getItem("search-hist")) || [];
@@ -9,10 +9,10 @@ function init () {
     const clearEl = document.getElementById("clear");
     const nameEl = document.getElementById("city-name");
     const currentPicEl = document.getElementById("current-pic");
-    const currentTempEl = document.getElementById("current--temp");
+    const currentTempEl = document.getElementById("current-temp");
     const currentWindEl = document.getElementById("wind");
     const currentUVEl = document.getElementById("UV");
-    const currentHumidityEL = document.getElementById("Humidity")
+    const currentHumidityEL = document.getElementById("humidity")
     var fiveDayForecastEl = document.getElementById("forecast");
     var todayweatherEL=document.getElementById("current-weather");
 
