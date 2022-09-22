@@ -44,8 +44,8 @@ function cityWeather(cityName) {
         currentHumidityEL.innerHTML = "Humidity: " + respomse.data.humidity + "%";
       
         // Grabs UV based off coordinates
-        let latitude = response.data.coord.lat;
-        let longitude = respomse.data.coord.lon;
+        let lat = response.data.coord.lat;
+        let lon = respomse.data.coord.lon;
 
         // Displays UV
         let UVQueryURL = "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey + "&cnt=1";
@@ -60,10 +60,11 @@ function cityWeather(cityName) {
 
         // Creates the 5 day forcast
         let city = response.data.id;
-        let forcastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + myAPIKey;
+        let forcastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + city + "&appid=" + apiKey;
         axios.get(forcastQueryURL)
         .then(function (response) {
             fiveDayForecastEl.classList.remove("d-none");
+            const forecast
         })
     })
     
