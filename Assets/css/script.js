@@ -64,9 +64,51 @@ function cityWeather(cityName) {
         axios.get(forcastQueryURL)
         .then(function (response) {
             fiveDayForecastEl.classList.remove("d-none");
-            const forecast
+            
+            // takes all things forcast
+            const forecastEl = document.querySelectorAll(".forcast");
+            for (i = 0; i< forecastEl.length; i++){
+            forecastEl[i].innerHTML = "";
+            const forecastIndex = i*8+4;
+            const forecastDate= new Date(response.data.list[forecastIndex].dt*1000);
+            
+            // retrieves local time 
+            const forecastDay= forecastDate.getDate();
+            const forecastMonth= forecastDate.getMonth() + 1;
+            const forecastYear = forecastDate.getFullYear();
+            const forecastDateEl = document.createElement("p");
+            forecastDateEl.setAttribute("class","mt-3 ,mb-0 forecast-date");
+            forecastDateEl.innerHTML = forecastMonth + "/" + forecastDay + "/" + forecastYear;
+            forecastEl[i].append(forecastDateEl);
+
+            const forecastWeatherEl = document.createElement("img");
+            forecastWeatherEl.setAttribute("src", "https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
+            forecastWeatherEl.setAttribute("alt", response.data.list[forecastIndex].weather[0].description);
+            forecastEl[i].append(forecastWeatherEl);
+            const forecastTempEl=document.createElement("p");
+            forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + "&#176F";
+            forecastEl[i].append(forecastTempEl);
+            const forecastHumidityEl= document.createElement("p");
+            forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
+            forecastEl[i].append(forecastHumidityEl);
+            }
         })
-    })
+    });
     
 }
+// search box and history
+searchEL.addEventListener("click",function(){
+    const searchBox = inputEl.value;
+    getWeather(searchBox);
+    searchHistory.push(searchBox);
+    localStorage.setItem("search",JSON.stringify(searchHistory));
+    renderSearchHistory();
+})
+// Clear Search history
+clearEl.addEventListener("click",function(){
+searchHistory = [];
+renderSearchHistory();
+})
+
+
 init();
