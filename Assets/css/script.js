@@ -6,10 +6,10 @@ function initialize() {
     const clearEl = document.getElementById("clear");
     const nameEl = document.getElementById("city-name");
     const currentPicEl = document.getElementById("current-pic");
-    const currentTempEl = document.getElementById("temperature");
+    const currentTempEl = document.getElementById("current-temp");
     const currentHumidityEl = document.getElementById("humidity");
     const currentWindEl = document.getElementById("wind-speed");
-    const currentUVEl = document.getElementById("UV-index");
+    const currentUVEl = document.getElementById("UV");
     const historyEl = document.getElementById("history");
     var fiveDayForecastEl = document.getElementById("forecast");
     var todayweatherEl = document.getElementById("current-weather");

@@ -39,43 +39,46 @@
           <form id="history"></form>
         </div>
         <div class="col-lg-9">
-          <div class="card-body">
+          <div class="row mr-0">
             <div class="col-lg-11 card m-3 d-none" id="current-weather">
               <div class="card-body">
                 <h2 class="city-name align-middle" id="city-name"></h2>
                 <img id="current-pic" alt="" />
                 <h4 id="current-temp"></h4>
-                <h4 id="wind"></h4>
+                <h4 id="wind-speed"></h4>
                 <h4 id="humidity"></h4>
                 <h4 id="UV"></h4>
               </div>
             </div>
           </div>
-          <div class="row">
+          <div class="row d-none" id="forecast">
             <div class="col-12">
+              <!-- Display the 5 Day forcast -->
               <h2>5 Day Forecast</h2>
             </div>
           </div>
           <div class="row">
             <div
-              class="forecast col-md-2 bg-primary text-white m-2 rounded"
+              class="forecast col-md-2 bg-primary text-white m-2 "
             ></div>
             <div
-              class="forecast col-md-2 bg-primary text-white m-2 rounded"
+              class="forecast col-md-2 bg-primary text-white m-2 "
             ></div>
             <div
-              class="forecast col-md-2 bg-primary text-white m-2 rounded"
+              class="forecast col-md-2 bg-primary text-white m-2 "
             ></div>
             <div
-              class="forecast col-md-2 bg-primary text-white m-2 rounded"
+              class="forecast col-md-2 bg-primary text-white m-2 "
             ></div>
             <div
-              class="forecast col-md-2 bg-primary text-white m-2 rounded"
+              class="forecast col-md-2 bg-primary text-white m-2 "
             ></div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- JavaScript -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

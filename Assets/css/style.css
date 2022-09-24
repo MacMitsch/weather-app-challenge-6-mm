@@ -6,8 +6,8 @@ h1 {
     font-size: 48px;
     font-weight: 700px;
     color: black;
-    background-color: aqua;
-    border-radius: 20px;
+    background-color: rgb(0, 133, 250);
+    
     
 }
 h2 {
@@ -15,9 +15,9 @@ h2 {
 }
 
 #search-button {
-    background-color: brown;
+    background-color: rgb(0, 133, 250);
 }
 
 #clear {
-    background-color: aquamarine;
+    background-color: rgb(248, 23, 23);
 }
